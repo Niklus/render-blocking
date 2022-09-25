@@ -1,7 +1,7 @@
 import './style.css';
 import javascriptLogo from './javascript.svg';
 
-let counter = 9;
+let counter = 10;
 
 const delay = (seconds=10) => {
   return new Promise((resolve) => {
@@ -13,7 +13,7 @@ const delay = (seconds=10) => {
 
 const interval = window.setInterval(() => {
   document.querySelector('#app').innerHTML = `
-    <h1>${counter--}</h1>
+    <h1>${--counter}</h1>
     <h2>Loading...</h2>
     <h3>Hang Tight 😎</h3>
   `;

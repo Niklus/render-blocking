@@ -1,9 +1,11 @@
 import './style.css';
 import javascriptLogo from './javascript.svg';
 
-let counter = 10;
+let counter = 0;
 
-const delay = (seconds=10) => {
+let seconds = 10; // change this to change loading time
+
+const delay = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve();
@@ -13,10 +15,11 @@ const delay = (seconds=10) => {
 
 const interval = window.setInterval(() => {
   document.querySelector('#app').innerHTML = `
-    <h1>${--counter}</h1>
+    <h1>${--seconds}</h1>
     <h2>Loading...</h2>
     <h3>Hang Tight 😎</h3>
   `;
+  counter++;
 }, 1000);
 
 await delay();
@@ -32,6 +35,6 @@ document.querySelector('#app').innerHTML = `
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     </a>
     <h1>Hello Vite!</h1>
-    <h2>The page loaded after 10 seconds</h2>
+    <h2>The page loaded after ${counter} seconds</h2>
   </div>
 `;
